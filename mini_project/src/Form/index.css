@@ -1,0 +1,117 @@
+.container{
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+    
+  }
+  
+  .form{
+    color: #6d32ba;
+    padding: 20px;
+    border: 1px solid black;
+    box-shadow: 0px 2px 4px 2px #afafaf;
+    width: auto;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 400px;
+    border-radius: 20px;
+  }
+  
+  .custom-select{
+    position: relative;
+  }
+  
+  .Warn_red{
+    color: red;
+    font-size: 18px;
+  }
+
+  .input1 , .state{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0px 2px 5px 2px #afafaf;
+    font-size: 18px;
+    border-radius: 20px;
+    outline: none;
+    padding: 20px;
+  }
+
+  .div-red{
+    padding: 30px;
+    border: 1px solid #ff0000;
+    border-radius: 20px;
+  }
+
+  select{
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #bfbfbf;
+    appearance: none;
+    box-shadow: 0px 3px 5px 3px;
+    border: 0px;
+    outline: 0px;
+    width: 400px;
+  }
+
+  .custom-arrow{
+    position: absolute;
+    top: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    pointer-events: none;
+    right: 0;
+    background: #afafaf;
+    display: block;
+    height: 100%;
+    width: 20%;
+  }
+  
+  .custom-arrow::before, .custom-arrow::after{
+    --size: 12px;
+    content:"";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 45%;
+    transform: translate(-50%, -50%);
+  }
+
+  .custom-arrow::before{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid #6d32ba;
+    top: 30%;
+  }
+  
+  .custom-arrow::after{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid #6d32ba;
+    top: 70%;
+  }
+  
+  .textarea{
+    resize: none;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 3px 5px 3px #bfbfbf ;
+  }
+
+  .btn{
+    height: 40px;
+    background-color: #6d32ba;
+    color: #afafaf;
+    font-size: 20px;
+    border: none;
+    align-self: flex-end;
+    border-radius: 20px;
+    width: 150px;
+  }
