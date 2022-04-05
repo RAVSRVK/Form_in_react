@@ -4,15 +4,17 @@ import "./index.css"
 const Header = () =>(
   
   <><div className='main-heading'>
+    <div className='profile-setting'><h1 className="heading">U</h1></div>
+    </div>
+    {/* <hr className='hr' /> */}
   <div className='container1'>
-    <div></div>
-    <div><ul className="nav-items-list">
+    <ul className="nav-items-list">
       <li  className="link-item">
-        <Link  className="route-link" to="/">
+        <Link  className={`link-item links`} to="/">
           Form
         </Link>
       </li>
-      <li className="link-item disabled">
+      <li className={`link-item disabled`}>
         <Link className="route-link" to="/Choose">
           Choose
         </Link>
@@ -22,8 +24,7 @@ const Header = () =>(
           Confirm
         </Link>
       </li>
-    </ul></div><div className='profile-setting'><h1 className="heading">U</h1></div>
-    </div>
+    </ul>
   </div></>
     
 )

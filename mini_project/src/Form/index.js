@@ -3,14 +3,14 @@ import './index.css';
 import Axios from "axios";
 
 class Form extends Component {
-  state={name:"", states:"", issue:"", isNamefilled:false, istextareafilled:false , isStateFilled:false, List:[] }
+  state={states:"", issue:"", istextareafilled:false , isStateFilled:false, List:[] }
 
   Submit =  event =>{
     event.preventDefault()
-    const {name,states, issue} = this.state
+    const {states, issue} = this.state
       // insert into db
-      if(name !=="" && states !=="" && issue!=="" ){
-        let stats =  Axios.post('http://localhost:3307/create', {name:name, 
+      if(states !=="" && issue!=="" ){
+        let stats =  Axios.post('http://localhost:3307/create', {
         states:states, 
         issue:issue,})
         .then(()=>{
@@ -20,7 +20,6 @@ class Form extends Component {
         console.log(stats);
       }
       else{
-          this.checkName()
           this.checkIssue()
           this.blurred()
         } 
@@ -35,27 +34,12 @@ class Form extends Component {
 
   }
 
-  changeName = event =>{
-    this.setState({name:event.target.value})
-  }
-
   changeState = event =>{
-
     this.setState({states:event.target.value})
   }
 
   changeText = event =>{
     this.setState({issue:event.target.value})
-  }
-
-  checkName = () =>{
-    const {name} = this.state
-    if(name===""){
-      this.setState({isNamefilled:true})
-    }
-    else{
-      this.setState({isNamefilled:false})
-    }
   }
 
   checkIssue = () =>{
@@ -80,19 +64,17 @@ class Form extends Component {
  
 
   render() {
-    const {name,states,issue,isNamefilled,istextareafilled, isStateFilled, List} = this.state
+    const {states,issue,istextareafilled, isStateFilled, List} = this.state
       
     return (
          <div className='container'>
-        <form className={(isNamefilled || isStateFilled || istextareafilled) ? 'div-red form ' : 'form'}>
+        <form className='form'>
           
-          <input className='input1' placeholder='Enter your name' value={name} onBlur={this.checkName} onChange={this.changeName} id="Name" type="text" />
-          <p className='Warn_red' id='err1'>{isNamefilled ?  "*Please fill your name" : ""}</p>    
-          
-          <label htmlFor='state'>Select state</label><br />
+        <h1>Step Three</h1>
+          <label htmlFor='state'>What Redressal are you seeking?</label><br />
           <div className='custom-select'>
           <select value={states} onClick={this.blurred} onChange={this.changeState} className='state' id="state">
-              <option  className='hiddenValue'  selected hidden >Select a State</option>
+              <option  className='hiddenValue'  selected hidden >Select an Option</option>
               <option  value="Andhra Pradesh">Andhra Pradesh</option>
               <option value="Telangana">Telangana</option>
               <option value="Tamil Nadu">Tamil Nadu</option>
@@ -101,13 +83,12 @@ class Form extends Component {
             </select><span className='custom-arrow'></span>
           </div>
           <p className='Warn_red'>{isStateFilled ? "*Please select a state" : ""}</p>
-          <label htmlFor='Issue'>Tell us about the issue</label><br />
+          <label htmlFor='Issue'>Tell us about the Redressal Your Seek Briefly</label><br />
           <textarea placeholder="Enter your issue" onBlur={this.checkIssue} value={issue} onChange={this.changeText} className='textarea' id='Issue' rows="10" cols="50" ></textarea>
           <p className='Warn_red' id='err3'>{istextareafilled ?  "*Please explain about the issue" : ""}</p>          
           <button className='btn' onClick={this.Submit} type='submit'>Submit</button>
         </form>
-        <div>
-        </div>
+        
       </div>
      
     );

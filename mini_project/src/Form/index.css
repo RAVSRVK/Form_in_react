@@ -2,17 +2,18 @@
     /* height: 100vh; */
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100vw;
     height: 80vh;
+    margin-left: 150px;
     
   }
   
   .form{
     color: #6d32ba;
     padding: 20px;
-    border: 1px solid black;
-    box-shadow: 0px 2px 4px 2px #afafaf;
+
+    /* box-shadow: 0px 2px 4px 2px #afafaf; */
     width: auto;
     display: flex;
     height: fit-content;
@@ -68,7 +69,7 @@
     border-bottom-right-radius: 20px;
     pointer-events: none;
     right: 0;
-    background: #afafaf;
+    /* background: #afafaf; */
     display: block;
     height: 100%;
     width: 20%;
@@ -84,18 +85,18 @@
     transform: translate(-50%, -50%);
   }
 
-  .custom-arrow::before{
+  /* .custom-arrow::before{
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: var(--size) solid #6d32ba;
     top: 30%;
-  }
+  } */
   
   .custom-arrow::after{
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-top: var(--size) solid #6d32ba;
-    top: 70%;
+    top: 60%;
   }
   
   .textarea{
@@ -108,7 +109,7 @@
   .btn{
     height: 40px;
     background-color: #6d32ba;
-    color: #afafaf;
+    color: #ffffff;
     font-size: 20px;
     border: none;
     align-self: flex-end;

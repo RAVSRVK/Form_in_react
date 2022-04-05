@@ -11,22 +11,11 @@ const db =  mysql.createConnection({
     password: 'TresRich-MF@0',
     database:'Sama_db'
 });
-
-// db.query(
-//     'SELECT * FROM Sama_db.issues',
-//     function(err, results, fields) {
-//       console.log(results); // results contains rows returned by server
-//       console.log(fields); // fields contains extra meta data about results, if available
-//     }
-//   );
-
-
-
 app.post('/create', async (req,res) =>{
-    const {name,states, issue} = req.body
+    const {states, issue} = req.body
     // console.log(name);
     // const query1 = 'show databases'
-    const query = `insert into issues (Name, states,issue) values('${name}','${states}','${issue}' )`
+    const query = `insert into issues (states,issue) values('${states}','${issue}' )`
     // console.log(query);'INSERT INTO issues (Name,states,issue) VALUES (?,?,?)', 
     // [name,states,issue],
     db.query(query, (err, result) =>{
@@ -42,3 +31,5 @@ app.post('/create', async (req,res) =>{
 app.listen(3307, () =>{
     console.log("Connected111");
 })
+
+
